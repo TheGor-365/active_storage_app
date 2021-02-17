@@ -1,0 +1,13 @@
+<div class="row mt-5">
+
+    <% if current_user.images.attached? %>
+      <% (0...current_user.images.count).each do |image| %>
+      <div class="col-md-4 mt-5">
+        <%= image_tag(current_user.thumbnail(image)) %>
+      </div>
+      <% end %>
+    <% else %>
+      <p>No images to show...</p>
+    <% end %>
+
+</div>
